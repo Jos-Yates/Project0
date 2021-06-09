@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="repositories.EmployeeRepository"/>
+    <fullyQualifiedTypeName name="repositories.CustomerRepository"/>
+    <fullyQualifiedTypeName name="repositories.EmployeeDAO"/>
+    <fullyQualifiedTypeName name="repositories.TransactionHIstoryDAO"/>
+    <fullyQualifiedTypeName name="utils.JDBCConnection"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="repositories.CustomerDAO"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="models.Customer"/>
+</qualifiedTypeNameHistroy>

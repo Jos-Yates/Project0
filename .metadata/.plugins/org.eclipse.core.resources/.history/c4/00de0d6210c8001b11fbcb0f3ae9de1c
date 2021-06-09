@@ -1,0 +1,142 @@
+package repositories;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import models.Customer;
+import utils.JDBCConnection;
+
+public class CustomerDAO implements TemplateRepository<Customer> {
+	
+	//This connects to the JDBCC to allow editing of Customer tables
+	private Connection conn = JDBCConnection.getConnection();
+
+	@Override
+	public Customer add(Customer c) {
+		
+		String sql = "insert into customer values (?, ?, ?, ?, ?, ?);";
+		
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ps.setInt(1, c.getId());
+			ps.setString(2, c.getName());
+			ps.setString(3, c.getUsername());
+			ps.setString(4, c.getPassword());
+			ps.setInt(5, c.getAccount_balance());
+		}
+		catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+
+		return null;
+}
+
+	@Override
+	public List<Customer> getAll() {
+		
+		List<Customer> customer = new ArrayList<Customer>();
+		
+		String sql = "select * from customer;";
+		
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()) {
+				Customer c = new Customer();
+				c.setId(rs.getInt("id"));
+				c.setName(rs.getString("name"));
+				c.setUsername(rs.getString("username"));
+				c.setPassword(rs.getString("password"));
+				c.setAccount_balance(rs.getInt("account_balance"));
+
+
+
+				
+				customer.add(c);
+			}
+			return customer;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return null;
+	}
+
+	@Override
+	public boolean update(Customer c) {
+			String sql = "update customer set account_balance = ? where id = ?;";
+			
+			try {
+				
+				PreparedStatement ps = conn.prepareStatement(sql);
+				ps.setString(1, Integer.toString(c.getAccount_balance()));
+				ps.setString(2, Integer.toString(c.getId()));
+				
+				boolean success = ps.execute();
+				
+				if (success) {
+					return true;
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			return false;
+			
+			
+		}
+
+	@Override
+	public boolean delete(Customer c) {
+		String sql = "delete from account_balance = ? where id = ?;";
+		
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, Integer.toString(c.getAccount_balance()));
+			ps.setString(2, Integer.toString(c.getId()));
+			
+			boolean success = ps.execute();
+			
+			if (success) {
+				return true;
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public Customer getById(Integer id) {
+		String sql = "select * from customer where id = ?;";
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				Customer c = new Customer();
+				c.setId(rs.getInt("id"));
+				c.setUsername(rs.getString("username"));
+				c.setPassword(rs.getString("password"));
+				c.setAccount_balance(rs.getInt("account_balance"));
+				return c;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+}

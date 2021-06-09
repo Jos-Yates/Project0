@@ -1,0 +1,60 @@
+package daotests;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import models.Customer;
+import repositories.CustomerDAO;
+
+
+
+public class CustomerDaoTests {
+		
+		private CustomerDAO cdao = new CustomerDAO();
+		
+		@Test
+		public void getAllCustomersTest() {
+			
+			List<Customer> breeds = new ArrayList<Customer>();
+			Customer b = new Customer(1, "Calico");
+			Customer b2 = new Customer(2, "Bengal");
+			Customer b3 = new Customer(3, "Tabby");
+			Customer b4 = new Customer(4, "Sphynx");
+			Customer b5 = new Customer(5, "Siamese");
+			Customer b6 = new Customer(6, "Panther");
+			Customer b7 = new Customer(7, "Marmalade");
+			Customer b8 = new Customer(8, "Blue");
+			Customer b9 = new Customer(9, "Ninja");
+			
+			breeds.add(b);
+			breeds.add(b2);
+			breeds.add(b3);
+			breeds.add(b4);
+			breeds.add(b5);
+			breeds.add(b6);
+			breeds.add(b7);
+			breeds.add(b8);
+			breeds.add(b9);
+			
+			Assert.assertEquals(breeds, cdao.getAll());
+			
+			//breeds = bdao.getAll();
+
+
+	}
+		
+		@Test
+		public void getBreedByidTest () {
+			System.out.println(bdao.getById(5));
+		}
+		@Test
+		public void addBreedTest() {
+			Breed b = new Breed ("Add Test");
+			
+			System.out.println(bdao.add(b));
+		}
+
+}
