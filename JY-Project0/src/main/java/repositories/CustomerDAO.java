@@ -1,5 +1,6 @@
 package repositories;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -33,8 +34,7 @@ public class CustomerDAO implements TemplateRepository<Customer> {
 				customer.setUsername(rs.getString("username"));
 				customer.setPassword(rs.getString("password"));  // Builds up the customer object so as to return it to whatever calls it
 				customer.setName(rs.getString("name"));
-				customer.setAccount_balance(rs.getInt("account_balance"));
-				
+				customer.setEmployee(rs.getBoolean("employee"));
 				return customer;
 			}
 			
@@ -65,7 +65,6 @@ public class CustomerDAO implements TemplateRepository<Customer> {
 				customer.setUsername(rs.getString("username"));
 				customer.setPassword(rs.getString("password")); 
 				customer.setName(rs.getString("name"));
-				customer.setAccount_balance(rs.getInt("account_balance"));
 				
 				return customer;
 			}
@@ -83,7 +82,7 @@ public class CustomerDAO implements TemplateRepository<Customer> {
 	@Override
 	public Customer add(Customer c) {
 		
-		String sql = "insert into customer values (default, ?, ?, ?, ?) returning *;";
+		String sql = "insert into customer values (default, ?, ?, ?) returning *;";
 		
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -91,7 +90,6 @@ public class CustomerDAO implements TemplateRepository<Customer> {
 			ps.setString(1, c.getName());
 			ps.setString(2, c.getUsername());
 			ps.setString(3, c.getPassword());
-			ps.setInt(4, c.getAccount_balance());
 			
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()){
@@ -112,7 +110,7 @@ public class CustomerDAO implements TemplateRepository<Customer> {
 		
 		List<Customer> customer = new ArrayList<Customer>();
 		
-		String sql = "select * from customer;";
+		String sql = "select * from customer order by id asc;";
 		
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -125,8 +123,7 @@ public class CustomerDAO implements TemplateRepository<Customer> {
 				c.setName(rs.getString("name"));
 				c.setUsername(rs.getString("username"));
 				c.setPassword(rs.getString("password"));
-				c.setAccount_balance(rs.getInt("account_balance"));
-
+				c.setEmployee(rs.getBoolean("employee"));
 
 
 				
@@ -143,22 +140,27 @@ public class CustomerDAO implements TemplateRepository<Customer> {
 	}
 
 	@Override
-	public boolean update(Customer c) {
-			String sql = "update customer set account_balance = ? where id = ?;";
-			
+	public boolean update(Customer c) { //This will house the custom stored procedure
+			//String sql = "update customer set account_balance = ? where id = ?;";
+			String sql = "call update_account(?, ?)";
 			try {
 				
-				PreparedStatement ps = conn.prepareStatement(sql);
+				CallableStatement cs = conn.prepareCall(sql);
+				cs.setInt(1,  c.getId());
+				cs.setString(2,  c.getName());
+				return cs.execute();
+				
+				//PreparedStatement ps = conn.prepareStatement(sql);
 				//ps.setString(1, Integer.toString(c.getAccount_balance()));
-				ps.setInt(1, c.getAccount_balance());
+				//ps.setInt(1, c.getAccount_balance());
 				//ps.setString(2, Integer.toString(c.getId()));
-				ps.setInt(2, c.getId());
+				//ps.setInt(2, c.getId());
 				
-				boolean success = ps.execute();
+				//boolean success = ps.execute();
 				
-				if (success) {
-					return true;
-				}
+				//f (success) {
+				//	return true;
+				//}
 				
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -171,12 +173,11 @@ public class CustomerDAO implements TemplateRepository<Customer> {
 
 	@Override
 	public boolean delete(Customer c) {
-		String sql = "delete from account_balance = ? where id = ?;";
+		String sql = "delete from customer where id = ?;";
 		
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, Integer.toString(c.getAccount_balance()));
-			ps.setString(2, Integer.toString(c.getId()));
+			ps.setString(1, Integer.toString(c.getId()));
 			
 			boolean success = ps.execute();
 			
@@ -202,7 +203,7 @@ public class CustomerDAO implements TemplateRepository<Customer> {
 				c.setId(rs.getInt("id"));
 				c.setUsername(rs.getString("username"));
 				c.setPassword(rs.getString("password"));
-				c.setAccount_balance(rs.getInt("account_balance"));
+				c.setEmployee(rs.getBoolean("employee"));
 				return c;
 			}
 		} catch (SQLException e) {

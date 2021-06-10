@@ -1,0 +1,63 @@
+INFO  | 2021-06-09 21:52:57 | [main] Driver.Driver (Driver.java:82) - DummyAccount101 has logged in!
+INFO  | 2021-06-09 22:08:38 | [main] Driver.Driver (Driver.java:82) - DummyAccount101 has logged in!
+INFO  | 2021-06-09 23:03:06 | [main] Driver.Driver (Driver.java:78) - DummyAccount101 has logged in!
+INFO  | 2021-06-09 23:05:58 | [main] Driver.Driver (Driver.java:78) - DummyAccount101 has logged in!
+INFO  | 2021-06-09 23:07:22 | [main] Driver.Driver (Driver.java:78) - DummyAccount101 has logged in!
+INFO  | 2021-06-09 23:08:46 | [main] Driver.Driver (Driver.java:78) - DummyAccount101 has logged in!
+INFO  | 2021-06-09 23:10:56 | [main] Driver.Driver (Driver.java:78) - DummyAccount101 has logged in!
+INFO  | 2021-06-09 23:11:56 | [main] Driver.Driver (Driver.java:78) - 1 has logged in!
+INFO  | 2021-06-09 23:12:16 | [main] Driver.Driver (Driver.java:78) - 1 has logged in!
+INFO  | 2021-06-09 23:13:57 | [main] Driver.Driver (Driver.java:83) - 1 has logged in!
+INFO  | 2021-06-09 23:14:17 | [main] Driver.Driver (Driver.java:83) - DummyAccount101 has logged in!
+INFO  | 2021-06-09 23:15:26 | [main] Driver.Driver (Driver.java:83) - 1 has logged in!
+INFO  | 2021-06-09 23:15:39 | [main] Driver.Driver (Driver.java:83) - DummyAccount101 has logged in!
+INFO  | 2021-06-09 23:21:24 | [main] Driver.Driver (Driver.java:78) - 1 has logged in!
+INFO  | 2021-06-09 23:22:15 | [main] Driver.Driver (Driver.java:297) - Account [id=1, balance=1000.0, customer=2, pending=true] has applied with a starting balance of $1000.0
+INFO  | 2021-06-09 23:23:03 | [main] Driver.Driver (Driver.java:78) - 1 has logged in!
+INFO  | 2021-06-09 23:23:36 | [main] Driver.Driver (Driver.java:297) - Account [id=2, balance=2000.0, customer=2, pending=true] has applied with a starting balance of $2000.0
+INFO  | 2021-06-10 01:05:12 | [main] Driver.Driver (Driver.java:76) - DummyAccount101 has logged in!
+INFO  | 2021-06-10 01:05:19 | [main] Driver.Driver (Driver.java:83) - 1 has logged in!
+INFO  | 2021-06-10 01:06:58 | [main] Driver.Driver (Driver.java:76) - DummyAccount101 has logged in!
+INFO  | 2021-06-10 01:07:19 | [main] Driver.Driver (Driver.java:83) - 1 has logged in!
+INFO  | 2021-06-10 01:08:23 | [main] Driver.Driver (Driver.java:76) - DummyAccount101 has logged in!
+INFO  | 2021-06-10 01:10:30 | [main] Driver.Driver (Driver.java:76) - DummyAccount101 has logged in!
+INFO  | 2021-06-10 01:12:39 | [main] Driver.Driver (Driver.java:76) - DummyAccount101 has logged in!
+INFO  | 2021-06-10 01:13:05 | [main] Driver.Driver (Driver.java:76) - DummyAccount101 has logged in!
+INFO  | 2021-06-10 01:13:19 | [main] Driver.Driver (Driver.java:83) - 1 has logged in!
+INFO  | 2021-06-10 01:14:10 | [main] Driver.Driver (null:-1) - 100.0 deposited to account 1
+INFO  | 2021-06-10 01:14:30 | [main] Driver.Driver (Driver.java:76) - DummyAccount101 has logged in!
+INFO  | 2021-06-10 01:23:00 | [main] Driver.Driver (Driver.java:75) - DummyAccount101 has logged in!
+INFO  | 2021-06-10 01:25:38 | [main] Driver.Driver (Driver.java:82) - 1 has logged in!
+INFO  | 2021-06-10 01:25:56 | [main] Driver.Driver (Driver.java:75) - DummyAccount101 has logged in!
+INFO  | 2021-06-10 01:27:21 | [main] Driver.Driver (Driver.java:75) - DummyAccount101 has logged in!
+INFO  | 2021-06-10 01:33:38 | [main] Driver.Driver (Driver.java:75) - DummyAccount101 has logged in!
+INFO  | 2021-06-10 01:34:35 | [main] Driver.Driver (Driver.java:75) - admin has logged in!
+INFO  | 2021-06-10 01:49:48 | [main] Driver.Driver (Driver.java:75) - admin has logged in!
+INFO  | 2021-06-10 01:51:23 | [main] Driver.Driver (Driver.java:75) - admin has logged in!
+INFO  | 2021-06-10 01:52:01 | [main] Driver.Driver (Driver.java:304) - Account [id=3, balance=500.0, customer=5, pending=true] has applied with a starting balance of $500.0
+INFO  | 2021-06-10 01:54:12 | [main] Driver.Driver (Driver.java:75) - admin has logged in!
+INFO  | 2021-06-10 01:56:50 | [main] Driver.Driver (Driver.java:82) - 1 has logged in!
+INFO  | 2021-06-10 01:56:58 | [main] Driver.Driver (Driver.java:315) - Account [id=4, balance=300.0, customer=2, pending=true] has applied with a starting balance of $300.0
+INFO  | 2021-06-10 01:57:05 | [main] Driver.Driver (Driver.java:75) - admin has logged in!
+INFO  | 2021-06-10 02:05:39 | [main] Driver.Driver (Driver.java:82) - 1 has logged in!
+INFO  | 2021-06-10 02:06:00 | [main] Driver.Driver (Driver.java:315) - Account [id=5, balance=5.0, customer=2, pending=true] has applied with a starting balance of $5.0
+INFO  | 2021-06-10 02:07:48 | [main] Driver.Driver (Driver.java:82) - 1 has logged in!
+INFO  | 2021-06-10 02:08:13 | [main] Driver.Driver (Driver.java:82) - 1 has logged in!
+INFO  | 2021-06-10 02:09:36 | [main] Driver.Driver (Driver.java:82) - 1 has logged in!
+INFO  | 2021-06-10 02:10:00 | [main] Driver.Driver (Driver.java:75) - admin has logged in!
+INFO  | 2021-06-10 02:12:04 | [main] Driver.Driver (Driver.java:75) - admin has logged in!
+INFO  | 2021-06-10 02:15:15 | [main] Driver.Driver (Driver.java:82) - 1 has logged in!
+INFO  | 2021-06-10 02:15:50 | [main] Driver.Driver (Driver.java:82) - 1 has logged in!
+INFO  | 2021-06-10 02:17:28 | [main] Driver.Driver (Driver.java:82) - 1 has logged in!
+INFO  | 2021-06-10 02:18:01 | [main] Driver.Driver (Driver.java:415) - 100.0 deposited to account 3
+INFO  | 2021-06-10 02:30:09 | [main] Driver.Driver (Driver.java:82) - 1 has logged in!
+INFO  | 2021-06-10 02:37:12 | [main] Driver.Driver (Driver.java:75) - admin has logged in!
+INFO  | 2021-06-10 02:45:49 | [main] Driver.Driver (Driver.java:82) - 1 has logged in!
+INFO  | 2021-06-10 02:47:32 | [main] Driver.Driver (Driver.java:82) - 1 has logged in!
+INFO  | 2021-06-10 02:48:28 | [main] Driver.Driver (Driver.java:82) - 1 has logged in!
+INFO  | 2021-06-10 02:48:50 | [main] Driver.Driver (Driver.java:82) - 1 has logged in!
+INFO  | 2021-06-10 02:57:38 | [main] Driver.Driver (Driver.java:75) - admin has logged in!
+INFO  | 2021-06-10 03:02:34 | [main] Driver.Driver (Driver.java:82) - 1 has logged in!
+INFO  | 2021-06-10 08:31:13 | [main] Driver.Driver (Driver.java:75) - admin has logged in!
+INFO  | 2021-06-10 08:32:02 | [main] Driver.Driver (Driver.java:75) - admin has logged in!
+INFO  | 2021-06-10 08:33:17 | [main] Driver.Driver (Driver.java:75) - admin has logged in!
